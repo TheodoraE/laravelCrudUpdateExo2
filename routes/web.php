@@ -30,4 +30,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MembreController::class, 'index']);
 Route::get('/create', [MembreController::class, 'create']);
-
+Route::post('/store-membre', [MembreController::class, 'store']);
+Route::get('/show-membre/{id}', [MembreController::class, 'show']);
+Route::get('/edit-membre/{id}', [MembreController::class, 'edit']);
+Route::post('/update-membre/{id}', [MembreController::class, 'update']);
+Route::post('/delete-membre/{id}', [MembreController::class, 'destroy']);
+Route::post('/delete-all', [MembreController::class, 'delete']);

@@ -58,4 +58,11 @@ class MembreController extends Controller
         $destroy->delete();
         return redirect('/');
     }
+
+    public function delete()
+    {
+        $delete = Membre::all();
+        $delete->delete();
+        return redirect('/');
+    }
 }
