@@ -1,4 +1,8 @@
-<section class="container my-5">
+<section class="container mt-5">
+    <form action="/destroy-all" method="POST" class="mb-3">
+        @csrf
+        <button type="submit" class="btn btn-danger">DELETE ALL</button>
+    </form>
     <table class="table">
         <thead>
           <tr>
@@ -23,7 +27,4 @@
             @endforeach
         </tbody>
     </table>
-    <form action="/delete-all" method="POST">
-        <button type="submit" class="btn btn-danger">DELETE ALL</button>
-    </form>
 </section>

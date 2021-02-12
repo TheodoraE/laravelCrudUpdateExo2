@@ -1,4 +1,4 @@
-<section class="container mt-">
+<section class="container mt-5">
     <form action="/update-membre/{{$edit->id}}" method="POST">
         @csrf
         <div class="form-group">
@@ -11,9 +11,14 @@
         </div>
         <div class="form-group">
           <label for="Genre">Genre : </label>
-          <select class="form-control" name="genre" value="{{$edit->genre}}" id="exampleFormControlSelect1">
-            <option>Femme</option>
-            <option>Homme</option>
+          <select class="form-control" value={{$edit->genre}} name="genre" id="exampleFormControlSelect1">
+            @if ($edit->genre == "Homme")
+                <option>Homme</option>
+                <option>Femme</option>
+            @else
+                <option>Femme</option>
+                <option>Homme</option>
+            @endif
           </select>
         </div>
         <button type="submit" class="btn btn-primary">Enregistrer</button>

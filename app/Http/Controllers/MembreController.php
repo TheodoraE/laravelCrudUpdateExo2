@@ -26,7 +26,7 @@ class MembreController extends Controller
         $store->genre = $request->genre;
 
         $store->save();
-        return redirect()->back;
+        return redirect()->back();
     }
 
     public function show($id)
@@ -49,7 +49,7 @@ class MembreController extends Controller
         $update->genre = $request->genre;
 
         $update->save();
-        return view('/show-membre/'.$update->id);
+        return redirect('/show-membre/'.$update->id);
     }
 
     public function destroy($id)
@@ -59,10 +59,13 @@ class MembreController extends Controller
         return redirect('/');
     }
 
-    public function delete()
+    public function destroyALL()
     {
-        $delete = Membre::all();
-        $delete->delete();
+        $destroyALL = Membre::all();
+
+        foreach ($destroyALL as $item) {
+            $item->delete();
+        }
         return redirect('/');
     }
 }

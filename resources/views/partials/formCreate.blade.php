@@ -1,5 +1,5 @@
-<section class="container mt-">
-    <form action="/create-membre" method="POST">
+<section class="container mt-5">
+    <form action="/store-membre" method="POST">
         @csrf
         <div class="form-group">
           <label for="Nom">Nom : </label>
@@ -12,8 +12,8 @@
         <div class="form-group">
           <label for="Genre">Genre : </label>
           <select class="form-control" name="genre" id="exampleFormControlSelect1">
-            <option>Femme</option>
-            <option>Homme</option>
+            <option value="Femme">Femme</option>
+            <option value="Homme">Homme</option>
           </select>
         </div>
         <button type="submit" class="btn btn-primary">Enregistrer</button>
